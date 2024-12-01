@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech.Care</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assest/TestLogo.svg" alt="Tech Care Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#"><img src="assest/home.svg" alt="Home Icon"> Overview</a></li>
+            <li><a href="#" class="active"><img src="assest/group.svg" alt="Patients Icon"> Patients</a></li>
+            <li><a href="#"><img src="assest/calendar.svg" alt="Schedule Icon"> Schedule</a></li>
+            <li><a href="#"><img src="assest/chat.svg" alt="Message Icon"> Message</a></li>
+            <li><a href="#"><img src="assest/creditcard.svg" alt="Transactions Icon"> Transactions</a></li>
+        </ul>
+
+        <ul class="sidebar">
+            <li onclick="closeSideBar()"><img src="assest/close.svg" alt="close Icon" class="close"></li>
+            <li><a href="#"><img src="assest/home.svg" alt="Home Icon"> Overview</a></li>
+            <li><a href="#" class="active"><img src="assest/group.svg" alt="Patients Icon"> Patients</a></li>
+            <li><a href="#"><img src="assest/calendar.svg" alt="Schedule Icon"> Schedule</a></li>
+            <li><a href="#"><img src="assest/chat.svg" alt="Message Icon"> Message</a></li>
+            <li><a href="#"><img src="assest/creditcard.svg" alt="Transactions Icon"> Transactions</a></li>
+        </ul>
+
+
+        <div class="profile">
+            <img src="assest/seniorDoctor.png" alt="Dr. Jose Simmons">
+            <div class="profile-info">
+                <span>Dr. Jose Simmons</span>
+                <small>General Practitioner</small>
+            </div>
+            <img src="assest/settings.svg" alt="Dr. Jose Simmons" class="settings-btn">
+            <img src="assest/vertical.svg" alt="Dr. Jose Simmons" class="settings-btn">
+            <div onclick="showSideBar()">
+                <img src="assest/menu.svg" alt="menu" class="menu">
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="left-sidebar">
+            <div class="header">
+                <h3>Patients</h3>
+                <div class="search-icon">
+                    <img src="assest/search.svg" alt="Search">
+                </div>
+            </div>
+            <div class="left-sidebar-content">
+
+            </div>
+        </div>
+        <div class="middle-content">
+            <div class="diagnosis-history">
+                <h2>Diagnosis History</h2>
+                <div class="chart">
+                    <div class="chart-left">
+                        <div class="chart-header">
+                            <div class="chart-title">
+                                <span>Blood Pressure</span>
+                            </div>
+                            <div class="chart-dropdown">
+                                <span>Last 6 months</span>
+                                <img src="assest/ArrowDown.svg" alt="Expand">
+                            </div>
+                        </div>
+
+                        <div class="chart-graph">
+                            <canvas id="bloodPressureChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-right">
+                        <div class="chart-info-top">
+                            <div class="chart-dot-container">
+
+                                <div class="chart-dot" style="background: #E66FD2;"></div>
+                                <span class="chart-label">Systolic</span>
+                            </div>
+
+                            <span class="chart-value"></span>
+                            <div class="chart-status">
+                                <img src="assest/ArrowDown.svg" alt="Up Arrow">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="chart-info-bottom">
+                            <div class="chart-dot-container-bottom">
+                                <div class="chart-dot" style="background: #8C6FE6;"></div>
+                                <span class="chart-label">Diastolic</span>
+                            </div>
+
+                            <span class="chart-value"></span>
+                            <div class="chart-status">
+                                <img src="assest/ArrowDown.svg" alt="Up Arrow">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="indicator-cards">
+                    <div class="indicator-card">
+                        <div class="indicator-image">
+                            <img src="assest/respiratory.svg" alt="Heart BPM Icon">
+                        </div>
+                        <div class="indicator-content">
+                            <span>Respiratory Rate</span>
+                            <p>20 bpm</p>
+                        </div>
+                        <span>Normal</span>
+                    </div>
+                    <div class="indicator-card">
+                        <div class="indicator-image">
+                            <img src="assest/temperature.svg" alt="Heart BPM Icon">
+                        </div>
+                        <div class="indicator-content">
+                            <span>Temperature</span>
+                            <p>98.6&deg;F</p>
+                        </div>
+                        <span>Normal</span>
+                    </div>
+                    <div class="indicator-card">
+                        <div class="indicator-image">
+                            <img src="assest/HeartBPM.svg" alt="Heart BPM Icon">
+                        </div>
+                        <div class="indicator-content">
+                            <span>Heart Rate</span>
+                            <p>78 bpm</p>
+                        </div>
+                        <span>Normal</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Diagnostic List Section -->
+            <div class="diagnostic-list">
+                <h2>Diagnostic List</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Problem</th>
+                                <th>Description</th>
+                                <th>Diagnoses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="right-sidebar">
+            <div class="right-sidebar-top">
+                <div class="profile-image">
+                    <img src="" alt="Jessica Taylor">
+                </div>
+
+                <h3 class="profile-name"></h3>
+
+                <ul class="profile-info-list">
+                    <li>
+                        <div class="icon">
+                            <img src="assest/BirthIcon.svg" alt="Date of Birth Icon">
+                        </div>
+                        <div class="info-text">
+                            <span class="detail-title">Date of Birth</span>
+                            <span class="detail-info"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <img src="assest/FemaleIcon.svg" alt="Date of Birth Icon">
+                        </div>
+                        <div class="info-text">
+                            <span class="detail-title">Gender</span>
+                            <span class="detail-info"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <img src="assest/PhoneIcon.svg" alt="Date of Birth Icon">
+                        </div>
+                        <div class="info-text">
+                            <span class="detail-title">Contact Info.</span>
+                            <span class="detail-info"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <img src="assest/PhoneIcon.svg" alt="Date of Birth Icon">
+                        </div>
+                        <div class="info-text">
+                            <span class="detail-title">Emergency Contacts</span>
+                            <span class="detail-info"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <img src="assest/InsuranceIcon.svg" alt="Date of Birth Icon">
+                        </div>
+                        <div class="info-text">
+                            <span class="detail-title">Insurance Provider</span>
+                            <span class="detail-info"></span>
+                        </div>
+                    </li>
+                </ul>
+                <button class="show-info-button">Show All Information</button>
+            </div>
+            <div class="right-sidebar-bottom">
+                <h3 class="lab-results-heading">Lab Results</h3>
+
+                <ul class="lab-results-list">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="index.js">
+    </script>
+</body>
+
+</html>
